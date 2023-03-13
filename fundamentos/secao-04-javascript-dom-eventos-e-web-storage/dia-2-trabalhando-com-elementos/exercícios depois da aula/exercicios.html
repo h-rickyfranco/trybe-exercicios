@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Exercício</title>
+    <style>
+
+      section {
+        border-color: black;
+        border-style: solid;
+        margin-right: auto;
+        display: flex;
+        justify-content: center;
+      }
+
+      .title {
+        text-align: center;
+      }
+
+      .main-content {
+        background-color: yellow;
+      }
+
+      .main-content .center-content {
+        background-color: red;
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .main-content .center-content p {
+        font-style: italic;
+      }
+
+      .main-content .left-content {
+        background-color: green;
+        width: 60%;
+        margin-left: 0;
+        margin-right: auto;
+      }
+
+      .main-content .left-content .small-image {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border-radius: 100%;
+      }
+
+      .main-content .right-content {
+        background-color: blue;
+        width: 60%;
+        margin-left: auto;
+        margin-right: 0;
+      }
+
+      .main-content .description {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+        //Captura de elementos
+        const body = document.getElementsByTagName('body')[0];
+        const h1 = document.createElement('h1');
+        const main = document.createElement('main');
+        const section1 = document.createElement('section');
+        const section2 = document.createElement('section');
+        const section3 = document.createElement('section');
+        const pTag = document.createElement('p');
+        const img = document.createElement('img');
+        const ul = document.createElement('ul');
+
+        //funções
+        h1.innerHTML = 'TrybeTrip - Agência de Viagens'
+        body.appendChild(h1);
+
+        main.className = 'main-content';
+        body.appendChild(main);
+
+        section1.className = 'center-content';
+        main.appendChild(section1);
+
+        section1.appendChild(pTag);
+
+        section2.className = 'left-content';
+        main.appendChild(section2);
+
+        section3.className = 'right-content';
+        main.appendChild(section3);
+
+        img.src = 'https://picsum.photos/200';
+        img.className = 'small-image';
+        section2.appendChild(img);
+
+        for (let index = 1; index <= 10; index += 1) {
+          let listContent = document.createElement('li');
+          listContent.innerHTML = index;
+          ul.appendChild(listContent);
+        }
+        section3.appendChild(ul);
+
+        let h3 = document.createElement('h3');
+        for (index = 0; index < 3; index += 1) {
+          let h3 = document.createElement('h3');
+          main.appendChild(h3);
+        }
+
+        let title = document.getElementsByTagName('h1');
+        for (let index = 0; index < title.length; index += 1) {
+          title[index].className = 'title';
+        }
+
+        let description = document.getElementsByTagName('h3');
+        for (let index = 0; index < description.length; index += 1) {
+          description[index].className = 'description';
+        }
+
+        main.style.backgroundColor = 'green';
+
+        ul.removeChild(ul.lastChild);
+        ul.removeChild(ul.lastChild);
+
+        //chamar funções
+    </script>
+  </body>
+</html>
